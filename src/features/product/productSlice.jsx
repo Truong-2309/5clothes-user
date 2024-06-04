@@ -45,16 +45,16 @@ export const filterProduct = createAsyncThunk(
     try {
       let query =
         "https://ecommerce-api-mcqr.onrender.com/product/filterProduct?";
-      if (name) {
+      if (!name) {
         query += "name=" + name;
       }
-      if (minPrice) {
+      if (!minPrice) {
         query += "&minPrice=" + minPrice;
       }
-      if (maxPrice) {
+      if (!maxPrice) {
         query += "&maxPrice=" + maxPrice;
       }
-      if (brand) {
+      if (!brand) {
         query += "&brand=" + brand;
       }
       const response = await axios.get(query);
